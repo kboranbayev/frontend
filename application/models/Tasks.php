@@ -1,5 +1,5 @@
 <?php
-
+include("Entity.php");
 class Tasks extends CSV_Model {
 
         public function __construct()
@@ -29,7 +29,6 @@ class Tasks extends CSV_Model {
 
             return $converted;
         }
-
         // provide form validation rules
         public function rules()
         {
