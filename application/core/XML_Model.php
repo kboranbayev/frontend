@@ -43,7 +43,7 @@ class XML_Model extends Memory_Model
 	 */
 	protected function load()
 	{
-    if (file_exists($this->_origin)) 
+    if (file_exists($this->_origin))
     {
       // open xml file
       $xml = simplexml_load_file($this->_origin);
@@ -56,7 +56,7 @@ class XML_Model extends Memory_Model
         $tasks = (array)$entry;
         // foreach root as entry
         foreach($tasks as $task)
-        { 
+        {
           $task = (array)$task;
           $task_keys = array_keys($task);
           $this->_fields = $task_keys;
@@ -68,7 +68,7 @@ class XML_Model extends Memory_Model
           }
           $key = $record->{$this->_keyfield};
           $this->_data[$key] = $record;
-        } 
+        }
       }
     }
     // --------------------
@@ -82,6 +82,7 @@ class XML_Model extends Memory_Model
 	 */
 	protected function store()
 	{
+		/*
     $xml = '<?xml version="1.0" encoding="UTF-8"?>
             <root>
             </root>
@@ -89,15 +90,15 @@ class XML_Model extends Memory_Model
 		// rebuild the keys table
     $this->reindex();
     // --------------------
-    if (file_exists($this->_origin)) 
+    if (file_exists($this->_origin))
     {
       $tasks = new SimpleXMLElement($xml);
-      
+
       foreach($this->_data as $key => $record)
       {
         $task = $tasks->addChild('entry');
         $task_ = (array)$record;
-        
+
         $task_keys = array_keys($task_);
         foreach($task_keys as $task_key)
         {
@@ -107,7 +108,6 @@ class XML_Model extends Memory_Model
       $tasks->asXML($this->_origin);
     }
     // --------------------
+		*/
   }
 }
-
-
